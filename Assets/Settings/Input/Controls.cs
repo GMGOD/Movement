@@ -21,123 +21,123 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     public @Controls()
     {
         asset = InputActionAsset.FromJson(@"{
-        ""name"": ""Playercontrols"",
-        ""maps"": [
-            {
-                ""name"": ""Player"",
-                ""id"": ""47b95e70-b9cb-465e-8b86-975c87e921ec"",
-                ""actions"": [
-                    {
-                        ""name"": ""MouseLook"",
-                        ""type"": ""PassThrough"",
-                        ""id"": ""d179a01b-03d2-4d86-9175-1ab9f0fb487b"",
-                        ""expectedControlType"": ""Vector2"",
-                        ""processors"": """",
-                        ""interactions"": """",
-                        ""initialStateCheck"": false
-                    },
-                    {
-                        ""name"": ""Movement"",
-                        ""type"": ""PassThrough"",
-                        ""id"": ""c09ba445-0607-430b-b2b8-c8c071c74a9b"",
-                        ""expectedControlType"": ""Vector2"",
-                        ""processors"": """",
-                        ""interactions"": """",
-                        ""initialStateCheck"": false
-                    },
-                    {
-                        ""name"": ""Jump"",
-                        ""type"": ""Button"",
-                        ""id"": ""3ca556c4-4bf4-42d6-bea1-b14b6be1d8e5"",
-                        ""expectedControlType"": ""Button"",
-                        ""processors"": """",
-                        ""interactions"": """",
-                        ""initialStateCheck"": false
-                    }
-                ],
-                ""bindings"": [
-                    {
-                        ""name"": """",
-                        ""id"": ""b011c500-b70e-43e5-b99d-31c74eb78eec"",
-                        ""path"": ""<Mouse>/delta"",
-                        ""interactions"": """",
-                        ""processors"": """",
-                        ""groups"": """",
-                        ""action"": ""MouseLook"",
-                        ""isComposite"": false,
-                        ""isPartOfComposite"": false
-                    },
-                    {
-                        ""name"": ""WASD"",
-                        ""id"": ""81208600-03dd-4e51-b5a4-ccca1e3369d2"",
-                        ""path"": ""2DVector"",
-                        ""interactions"": """",
-                        ""processors"": """",
-                        ""groups"": """",
-                        ""action"": ""Movement"",
-                        ""isComposite"": true,
-                        ""isPartOfComposite"": false
-                    },
-                    {
-                        ""name"": ""up"",
-                        ""id"": ""1f6b013b-fa32-4e05-8115-59a6867232a4"",
-                        ""path"": ""<Keyboard>/w"",
-                        ""interactions"": """",
-                        ""processors"": """",
-                        ""groups"": """",
-                        ""action"": ""Movement"",
-                        ""isComposite"": false,
-                        ""isPartOfComposite"": true
-                    },
-                    {
-                        ""name"": ""down"",
-                        ""id"": ""b3032b35-7f64-4431-87a9-664d65b90473"",
-                        ""path"": ""<Keyboard>/s"",
-                        ""interactions"": """",
-                        ""processors"": """",
-                        ""groups"": """",
-                        ""action"": ""Movement"",
-                        ""isComposite"": false,
-                        ""isPartOfComposite"": true
-                    },
-                    {
-                        ""name"": ""left"",
-                        ""id"": ""44121e2c-6509-40fe-ad32-9572f2a5385f"",
-                        ""path"": ""<Keyboard>/a"",
-                        ""interactions"": """",
-                        ""processors"": """",
-                        ""groups"": """",
-                        ""action"": ""Movement"",
-                        ""isComposite"": false,
-                        ""isPartOfComposite"": true
-                    },
-                    {
-                        ""name"": ""right"",
-                        ""id"": ""d9cd7637-eb37-49f1-af3a-b66f22029387"",
-                        ""path"": ""<Keyboard>/d"",
-                        ""interactions"": """",
-                        ""processors"": """",
-                        ""groups"": """",
-                        ""action"": ""Movement"",
-                        ""isComposite"": false,
-                        ""isPartOfComposite"": true
-                    },
-                    {
-                        ""name"": """",
-                        ""id"": ""1eda67a5-b335-414b-9a88-e838d447050a"",
-                        ""path"": ""<Keyboard>/space"",
-                        ""interactions"": """",
-                        ""processors"": """",
-                        ""groups"": """",
-                        ""action"": ""Jump"",
-                        ""isComposite"": false,
-                        ""isPartOfComposite"": false
-                    }
-                ]
-            }
-        ],
-        ""controlSchemes"": []
-        }");
+    ""name"": ""Playercontrols"",
+    ""maps"": [
+        {
+            ""name"": ""Player"",
+            ""id"": ""47b95e70-b9cb-465e-8b86-975c87e921ec"",
+            ""actions"": [
+                {
+                    ""name"": ""MouseLook"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""d179a01b-03d2-4d86-9175-1ab9f0fb487b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""c09ba445-0607-430b-b2b8-c8c071c74a9b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ca556c4-4bf4-42d6-bea1-b14b6be1d8e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b011c500-b70e-43e5-b99d-31c74eb78eec"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""81208600-03dd-4e51-b5a4-ccca1e3369d2"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""1f6b013b-fa32-4e05-8115-59a6867232a4"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b3032b35-7f64-4431-87a9-664d65b90473"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""44121e2c-6509-40fe-ad32-9572f2a5385f"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""d9cd7637-eb37-49f1-af3a-b66f22029387"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1eda67a5-b335-414b-9a88-e838d447050a"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        }
+    ],
+    ""controlSchemes"": []
+}");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_MouseLook = m_Player.FindAction("MouseLook", throwIfNotFound: true);

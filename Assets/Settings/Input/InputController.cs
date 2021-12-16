@@ -11,7 +11,7 @@ public class InputController : MonoBehaviour
     }
 
     private void OnEnable() {
-        controls.Gameplay.Enable();
+        controls.Enable();
     }
 
     void Start()
