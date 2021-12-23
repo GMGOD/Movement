@@ -9,10 +9,13 @@ public class InputEventVector2 : UnityEvent<float, float> { }
 public class InputCrouchEventBool : UnityEvent<bool> { }
 [Serializable]
 public class InputRunEventBool : UnityEvent<bool> { }
+[Serializable]
+public class InputMenuEventBool : UnityEvent<bool> { }
 public class InputManager : MonoBehaviour
 {
     private Controls controls;
     public InputCrouchEventBool crouchInputEvent;
+    public InputMenuEventBool menuInputEvent;
     public InputEventVector2 moveInputEvent;
     public InputRunEventBool runInputEvent;
 
@@ -24,12 +27,15 @@ public class InputManager : MonoBehaviour
     private void OnEnable()
     {
         controls.Player.Enable();
+        controls.Menu.Enable();
         controls.Player.Move.performed += OnMove;
         controls.Player.Move.canceled += OnMove;
         controls.Player.Run.performed += OnRun;
         controls.Player.Run.canceled += OnRun;
         controls.Player.Crouch.performed += OnCrouch;
-        //controls.Gameplay.Crouch.canceled += OnCrouch;
+        controls.Player.Crouch.canceled += OnCrouch;
+        controls.Menu.Escape.performed += OnMenu;
+        //controls.Menu.Escape.canceled += OnMenu;
     }
 
     private void OnMove(InputAction.CallbackContext context)
@@ -48,5 +54,12 @@ public class InputManager : MonoBehaviour
     {
         bool crouchInput = context.ReadValueAsButton();
         crouchInputEvent.Invoke(crouchInput);
+    }
+
+    private void OnMenu(InputAction.CallbackContext context)
+    {
+        bool menuInput = context.ReadValueAsButton();
+        Debug.Log($"Menu ! {menuInput}");
+        menuInputEvent.Invoke(menuInput);
     }
 }
