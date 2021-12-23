@@ -6,14 +6,15 @@ using UnityEngine.InputSystem;
 [Serializable]
 public class InputEventVector2 : UnityEvent<float, float> { }
 [Serializable]
-public class InputEventBool : UnityEvent<bool> { }
-
+public class InputCrouchEventBool : UnityEvent<bool> { }
+[Serializable]
+public class InputRunEventBool : UnityEvent<bool> { }
 public class InputManager : MonoBehaviour
 {
     private Controls controls;
-    public InputEventBool crouchInputEvent;
+    public InputCrouchEventBool crouchInputEvent;
     public InputEventVector2 moveInputEvent;
-    public InputEventBool runInputEvent;
+    public InputRunEventBool runInputEvent;
 
     private void Awake()
     {

@@ -44,7 +44,7 @@ public sealed class CharacterController : MonoBehaviour
 
         IsMoving = MoveDirection.magnitude >= 0.1f;
         IsGrounded = groundDetector.DetectGround(out GroundInfo groundInfo);
-
+        //Debug.Log($"IsMoving {IsMoving},{IsGrounded}");
         if (!IsGrounded)
         {
             character.StateMachine.TrySetState(airborneState);
@@ -61,7 +61,7 @@ public sealed class CharacterController : MonoBehaviour
         }
 
         character.StateMachine.TrySetState(ambulationState);
-        Debug.Log($"{CurrentMoveSpeed}");
+        Debug.Log($"CurrentMoveSpeed {CurrentMoveSpeed}");
     }
 
     public void OnMoveInput(float horizontal, float vertical)

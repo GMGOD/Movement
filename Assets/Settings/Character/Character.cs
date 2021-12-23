@@ -11,7 +11,7 @@ public sealed class Character : MonoBehaviour
     [Header("Character Sheet")]
     [Header("Grounded Movement")]
     [SerializeField] private float moveSpeed = 2;
-    [SerializeField] private float runSpeed = 5;
+    [SerializeField] private float runSpeed = 10;
     [SerializeField] private float turnSpeed = 360;
     [SerializeField] private float acceleration = 4;
     [SerializeField] private float jumpSpeed = 10;
