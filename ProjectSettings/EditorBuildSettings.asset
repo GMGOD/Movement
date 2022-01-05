@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrimeraEscena.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/SegundaEscena.unity
+    guid: eaa7d528b56a5c443bce964ae5ec338d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 726b0a5835628977695507901c00a0e6, type: 2}

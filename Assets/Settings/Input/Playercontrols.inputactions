@@ -213,6 +213,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "IngresarNombre",
+            "id": "c887fe03-8554-4ca8-a068-829a6878aac5",
+            "actions": [
+                {
+                    "name": "E",
+                    "type": "Button",
+                    "id": "4e97f25a-5919-4f5b-b410-7da84507076a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "08aa1870-2e59-4f47-bda0-d0b9971249c4",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "E",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

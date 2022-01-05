@@ -235,6 +235,34 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""IngresarNombre"",
+            ""id"": ""c887fe03-8554-4ca8-a068-829a6878aac5"",
+            ""actions"": [
+                {
+                    ""name"": ""E"",
+                    ""type"": ""Button"",
+                    ""id"": ""4e97f25a-5919-4f5b-b410-7da84507076a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""08aa1870-2e59-4f47-bda0-d0b9971249c4"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""E"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -249,6 +277,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Escape = m_Menu.FindAction("Escape", throwIfNotFound: true);
+        // IngresarNombre
+        m_IngresarNombre = asset.FindActionMap("IngresarNombre", throwIfNotFound: true);
+        m_IngresarNombre_E = m_IngresarNombre.FindAction("E", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -402,6 +433,39 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         }
     }
     public MenuActions @Menu => new MenuActions(this);
+
+    // IngresarNombre
+    private readonly InputActionMap m_IngresarNombre;
+    private IIngresarNombreActions m_IngresarNombreActionsCallbackInterface;
+    private readonly InputAction m_IngresarNombre_E;
+    public struct IngresarNombreActions
+    {
+        private @Controls m_Wrapper;
+        public IngresarNombreActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @E => m_Wrapper.m_IngresarNombre_E;
+        public InputActionMap Get() { return m_Wrapper.m_IngresarNombre; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(IngresarNombreActions set) { return set.Get(); }
+        public void SetCallbacks(IIngresarNombreActions instance)
+        {
+            if (m_Wrapper.m_IngresarNombreActionsCallbackInterface != null)
+            {
+                @E.started -= m_Wrapper.m_IngresarNombreActionsCallbackInterface.OnE;
+                @E.performed -= m_Wrapper.m_IngresarNombreActionsCallbackInterface.OnE;
+                @E.canceled -= m_Wrapper.m_IngresarNombreActionsCallbackInterface.OnE;
+            }
+            m_Wrapper.m_IngresarNombreActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @E.started += instance.OnE;
+                @E.performed += instance.OnE;
+                @E.canceled += instance.OnE;
+            }
+        }
+    }
+    public IngresarNombreActions @IngresarNombre => new IngresarNombreActions(this);
     public interface IPlayerActions
     {
         void OnMouseLook(InputAction.CallbackContext context);
@@ -413,5 +477,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     public interface IMenuActions
     {
         void OnEscape(InputAction.CallbackContext context);
+    }
+    public interface IIngresarNombreActions
+    {
+        void OnE(InputAction.CallbackContext context);
     }
 }

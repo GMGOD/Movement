@@ -11,6 +11,8 @@ public class InputCrouchEventBool : UnityEvent<bool> { }
 public class InputRunEventBool : UnityEvent<bool> { }
 [Serializable]
 public class InputMenuEventBool : UnityEvent<bool> { }
+[Serializable]
+public class InputEEventBool : UnityEvent<bool> { }
 public class InputManager : MonoBehaviour
 {
     private Controls controls;
@@ -18,16 +20,28 @@ public class InputManager : MonoBehaviour
     public InputMenuEventBool menuInputEvent;
     public InputEventVector2 moveInputEvent;
     public InputRunEventBool runInputEvent;
+    public InputEEventBool EInputEvent;
 
     private void Awake()
     {
         controls = new Controls();
     }
-
+    public void DisabledInputsPlayer()
+    {
+        controls.Player.Disable();
+        controls.IngresarNombre.Disable();
+    }
+    public void EnableInputsPlayer()
+    {
+        controls.Player.Enable();
+        controls.IngresarNombre.Enable();
+    }
     private void OnEnable()
     {
         controls.Player.Enable();
         controls.Menu.Enable();
+        controls.IngresarNombre.Enable();
+
         controls.Player.Move.performed += OnMove;
         controls.Player.Move.canceled += OnMove;
         controls.Player.Run.performed += OnRun;
@@ -36,6 +50,7 @@ public class InputManager : MonoBehaviour
         controls.Player.Crouch.canceled += OnCrouch;
         controls.Menu.Escape.performed += OnMenu;
         //controls.Menu.Escape.canceled += OnMenu;
+        controls.IngresarNombre.E.performed += OnE;
     }
 
     private void OnMove(InputAction.CallbackContext context)
@@ -61,5 +76,11 @@ public class InputManager : MonoBehaviour
         bool menuInput = context.ReadValueAsButton();
         Debug.Log($"Menu ! {menuInput}");
         menuInputEvent.Invoke(menuInput);
+    }
+
+    private void OnE(InputAction.CallbackContext context)
+    {
+        bool eInput = context.ReadValueAsButton();
+        EInputEvent.Invoke(eInput);
     }
 }
